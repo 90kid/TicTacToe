@@ -1,0 +1,116 @@
+body{
+    background-image: url("img/dark-honeycomb.png");
+}
+.container{
+    width: 1000px;
+    height: 700px;
+    -webkit-box-shadow: 3px 10px 15px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 10px 15px 4px rgba(0,0,0,0.75);
+    box-shadow: 3px 10px 15px 4px rgba(0,0,0,0.75);
+    position: absolute; /*start   center vertically and horizontally */
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* center vertically and horizontally   end*/
+}
+.menuWrapper{
+    width: 100%;
+    height: 7%;
+}
+.menu{
+    width: 100%;
+    height: 100%;
+    background-color: #0f4c75;
+    font-size: 40px;
+    padding: unset;
+    margin: unset;
+    list-style-type: none;
+}
+.menu > li{
+    height: 100%;
+    width: 33.333%;
+    float: left;
+    text-align: center;
+    border-right-style: dashed;
+    box-sizing: border-box; /*Important for border! CSS3+*/
+}
+.menu > li:nth-last-child(1){
+    border: unset;
+}
+.menu > li:hover{
+    background-color: #3282b8;
+}
+.twoUnitContainer{
+    width: 100%;
+    height: 100%;
+    float:left;
+    padding: 100px;
+    box-sizing: border-box; /*Important for padding! CSS3+*/
+}
+.separateUnit{
+    height: 1px;
+    width: 20%;
+    float: left;
+}
+.unit{
+    width: 40%;
+    height: 100%;
+    float: left;
+    color: #3282b8;
+    padding: 6px;
+    box-sizing: border-box; /*Important for padding! CSS3+*/
+}
+.leftUnitContent{
+    width: 100%;
+    height: 100%;
+    padding: unset;
+    margin: unset;
+    border-style: solid;
+    border-width: 3px;
+    list-style-type: none;
+}
+.leftUnitContent > li{
+    height: 14%;
+    font-size: 25px;
+    text-align: center;
+    border-bottom-style: dashed;
+    padding: 6px;
+    box-sizing: border-box; /*Important for padding! CSS3+*/
+}
+.leftUnitContent > li:nth-last-child(2){
+    height: 40%;
+
+}
+.leftUnitContent > li:nth-last-child(1){
+    height: 18%;
+    border-bottom-style: unset;
+
+}
+.rightUnitContent{
+    width: 100%;
+    height: 100%;
+    padding: unset;
+    margin: unset;
+    border-style: solid;
+    border-width: 3px;
+    box-sizing: border-box;/*Important for border! CSS3+*/
+    list-style-type: none;
+}
+.rightUnitContent > li{
+    height: 10%;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    border-bottom-style: solid;
+    border-width: 3px;
+    padding: 6px;
+    box-sizing: border-box; /*Important for padding! CSS3+*/
+}
+.rightUnitContent > li:nth-last-child(1){
+    border: unset;
+
+}
+.rightUnitContent > li:hover{
+    background-color: #bbe1fa;
+}
+/* palette:  https://colorhunt.co/palette/167893  */
