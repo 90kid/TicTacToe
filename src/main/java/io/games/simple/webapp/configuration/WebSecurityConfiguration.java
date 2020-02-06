@@ -49,9 +49,9 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    // this unlocks css and js files -> spring security wont block css and js folders anymore.
+    // this unlocks css and js files and webjars -> spring security wont block css and js folders anymore.
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/css/**", "/js/**");
+        web.ignoring().antMatchers("/css/**", "/js/**", "/webjars/**");
     }
 
     @Bean
