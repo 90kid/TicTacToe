@@ -7,26 +7,36 @@
     </head>
     <body>
       <div class="container">
-          <div class="menuWrapper">
+          <div class="menu-wrapper">
               <ul class="menu">
                   <li> pierwsza opcja </li>
                   <li> druga opcja </li>
                   <li> trzecia opcja </li>
               </ul>
           </div>
-          <div class="twoUnitContainer">
+          <div class="two-unit-container">
               <div class="unit">
-                  <ul class="leftUnitContent">
-                      <li> input? </li>
-                      <li> input? </li>
-                      <li> input? </li>
-                      <li> submit? </li>
-                      <li> info? </li>
-                  </ul>
+                  <form>
+                     <ul class="left-unit-content">
+                         <li>
+                             <span class="input-reference">Login: </span>
+                             <input type="text" id="login" class="input-text" placeholder="login">
+                             <br><span class="input-warning"><!--warning--></span>
+                         </li>
+                         <li>
+                             <span class="input-reference">Password: </span>
+                             <input type="password" id="password1" class="input-password" placeholder="••••••••">
+                             <br><span class="input-warning"><!--warning--></span>
+                         </li>
+                         <li>
+                             <input type="submit" id="submit" class="submit" value="login">
+                         </li>
+                     </ul>
+                  </form>
               </div>
-              <div class="separateUnit"></div>
+              <div class="separate-unit"></div>
               <div class="unit">
-                  <ul class="rightUnitContent">
+                  <ul class="right-unit-content">
                       <li> info </li>
                       <li> info </li>
                       <li> info </li>

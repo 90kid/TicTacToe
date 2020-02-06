@@ -8,8 +8,12 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class StartController {
 
-    @GetMapping("/")
-    public String getPeople(Model model){
+    @GetMapping("/login")
+    public String login(Model model){
         return "login";
+    }
+    @GetMapping("/")
+    public String register(Model model){
+        return "register";
     }
 }
