@@ -77,15 +77,31 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-
 	</dependencies>
 
 	<build>
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+				<plugin>
+					<groupId>nl.geodienstencentrum.maven</groupId>
+					<artifactId>sass-maven-plugin</artifactId>
+					<version>3.7.2</version>
+				<!-- sass watch paths. For some reason they are different but ok -->
+				<configuration>
+                    <resources>
+                        <resource>
+                            <!-- Set source and destination dirs -->
+                            <source>
+                                <directory>${project.basedir}/src/main/resources/static/scss</directory>
+                            </source>
+                            <destination>${project.basedir}/src/main/resources/static/css</destination>
+                        </resource>
+                    </resources>
+                </configuration>
 			</plugin>
 		</plugins>
 	</build>

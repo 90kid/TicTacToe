@@ -1,0 +1,5 @@
+/* REFACTOR This imports the entire bootstrap and that's A LOT of data
+   so after we do all the important stuff we have to make sure that we import only the important parts
+   so that the page is smaller */
+@import '../bootstrap/bootstrap';
+
