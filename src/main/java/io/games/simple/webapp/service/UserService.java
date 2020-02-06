@@ -20,7 +20,8 @@ public class UserService implements UserDetailsService {
         );
     }
 
-    public void save(UserEntity user) {
-        userRepository.save(user);
-    }
+    public void save(UserEntity user) { userRepository.save(user); }
+
+    public Long count(){ return userRepository.count(); }
+
 }
