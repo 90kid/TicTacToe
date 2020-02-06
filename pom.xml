@@ -77,16 +77,10 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>bootstrap</artifactId>
-			<version>4.4.1</version>
-		</dependency>
-
-
 	</dependencies>
 
 	<build>
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -96,26 +90,6 @@
 					<groupId>nl.geodienstencentrum.maven</groupId>
 					<artifactId>sass-maven-plugin</artifactId>
 					<version>3.7.2</version>
-					<executions>
-					<execution>
-						<id>generate-css</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>update-stylesheets</goal>
-						</goals>
-						<!-- On spring run compile paths -->
-						<configuration>
-							<sassOptions>
-								<always_update>true</always_update>
-							</sassOptions>
-							<includes>
-								<include>${scssSourceInclude}</include>
-							</includes>
-							<sassSourceDirectory>${project.basedir}/src/main/resources/static/scss</sassSourceDirectory>
-							<destination>${project.basedir}/src/main/resources/static/css</destination>
-						</configuration>
-					</execution>
-				</executions>
 				<!-- sass watch paths. For some reason they are different but ok -->
 				<configuration>
                     <resources>
