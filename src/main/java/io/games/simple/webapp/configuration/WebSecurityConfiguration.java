@@ -34,7 +34,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login?logout")
                 .permitAll()
 
-                //Code below is for h2-console work without login
+                //Code below is for h2-console to work without login
                 .and()
                 .headers().frameOptions().disable()
                 .and()

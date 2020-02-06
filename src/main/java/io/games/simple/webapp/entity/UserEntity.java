@@ -7,9 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
@@ -19,19 +17,21 @@ import java.util.Collection;
 @Builder
 @Table(name="user")
 public class UserEntity implements UserDetails {
+
     @Id
-    private int id;
+    @SequenceGenerator(name = "user_id_seq", sequenceName = "user_id_seq", initialValue = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_seq")
+    private long id;
 
     private String email;
 
     private String password;
 
-    private boolean enabled;
+    @Builder.Default
+    private boolean enabled = true;
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
+    public Collection<? extends GrantedAuthority> getAuthorities() { return null; }
 
     @Override
     public boolean isAccountNonExpired() { return true; }
@@ -42,7 +42,5 @@ public class UserEntity implements UserDetails {
     @Override
     public boolean isCredentialsNonExpired() { return true; }
 
-    public String getUsername() {
-        return email;
-    }
+    public String getUsername() { return email; }
 }

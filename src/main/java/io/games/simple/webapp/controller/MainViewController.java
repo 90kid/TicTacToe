@@ -6,10 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainViewController {
 
+    @GetMapping(value = {"/mainView", "/"}) public String renderMainView(){ return "mainView"; }
 
-    @GetMapping(value = {"/mainView", "/"})
-    public String renderMainView(){
-
-        return "mainView";
-    }
 }

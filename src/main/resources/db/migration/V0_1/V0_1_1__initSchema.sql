@@ -1,7 +1,7 @@
 CREATE TABLE user(
     id BIGINT PRIMARY KEY,
-    email TEXT NOT NULL,
-    password TEXT NOT NULL,
+    email VARCHAR(80) NOT NULL,
+    password VARCHAR(80) NOT NULL,
     enabled BOOLEAN NOT NULL
 )
 
