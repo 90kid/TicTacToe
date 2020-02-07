@@ -6,60 +6,60 @@
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
-<div class="container">
-    <div class="menu-wrapper">
-        <ul class="menu">
-            <li> pierwsza opcja </li>
-            <li> druga opcja </li>
-            <li> trzecia opcja </li>
-        </ul>
-    </div>
-    <div class="two-unit-container">
-        <div class="unit">
-            <form>
-                <ul class="left-unit-content">
-                    <li>
-                        <span class="input-reference">Login: </span>
-                        <input type="text" id="login" class="input-text" placeholder="login">
-                        <br><span class="input-warning"><!--warning--></span>
-                    </li>
-                    <li>
-                        <span class="input-reference">Email: </span>
-                        <input type="text" id="email" class="input-text" placeholder="email@email.com">
-                        <br><span class="input-warning"><!--warning--></span>
-                    </li>
-                    <li>
-                        <span class="input-reference">Password: </span>
-                        <input type="password" id="password1" class="input-password" placeholder="••••••••">
-                        <br><span class="input-warning"><!--warning--></span>
-                    </li>
-                    <li>
-                        <span class="input-reference">Repeat Password: </span>
-                        <input type="password" id="password2" class="input-password" placeholder="••••••••">
-                        <br><span class="input-warning"><!--warning--></span>
-                    </li>
-                    <li>
-                        <input type="submit" id="submit" class="submit" value="register">
-                    </li>
-                </ul>
-            </form>
-        </div>
-        <div class="separate-unit"></div>
-        <div class="unit">
-            <ul class="right-unit-content">
-                <li> info </li>
-                <li> info </li>
-                <li> info </li>
-                <li> info </li>
-                <li> info </li>
-                <li> info </li>
-                <li> info </li>
-                <li> info </li>
-                <li> info </li>
-                <li> info </li>
+    <div class="elements-container">
+        <div class="menu-wrapper">
+            <ul class="menu">
+                <li> pierwsza opcja </li>
+                <li> druga opcja </li>
+                <li> trzecia opcja </li>
             </ul>
         </div>
+        <div class="two-unit-container">
+            <div class="unit">
+                <form th:action="@{/ACTION}" method="POST">
+                    <ul class="left-unit-content">
+                        <li>
+                            <span class="input-reference">Login: </span>
+                            <input type="text" name="username" class="input-text" placeholder="login">
+                            <br><span class="input-warning"><!--warning--></span>
+                        </li>
+                        <li>
+                            <span class="input-reference">Email: </span>
+                            <input type="text" name="email" class="input-text" placeholder="email@email.com">
+                            <br><span class="input-warning"><!--warning--></span>
+                        </li>
+                        <li>
+                            <span class="input-reference">Password: </span>
+                            <input type="password" name="password1" class="input-password" placeholder="••••••••">
+                            <br><span class="input-warning"><!--warning--></span>
+                        </li>
+                        <li>
+                            <span class="input-reference">Repeat Password: </span>
+                            <input type="password" name="password2" class="input-password" placeholder="••••••••">
+                            <br><span class="input-warning"><!--warning--></span>
+                        </li>
+                        <li>
+                            <input type="submit" id="submit" class="submit-button" value="register">
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <div class="separate-unit"></div>
+            <div class="unit">
+                <ul class="right-unit-content">
+                    <li> info </li>
+                    <li> info </li>
+                    <li> info </li>
+                    <li> info </li>
+                    <li> info </li>
+                    <li> info </li>
+                    <li> info </li>
+                    <li> info </li>
+                    <li> info </li>
+                    <li> info </li>
+                </ul>
+            </div>
+        </div>
     </div>
-</div>
 </body>
 </html>
