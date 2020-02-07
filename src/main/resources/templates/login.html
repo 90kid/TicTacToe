@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
-    <title>Title</title>
-</head>
-<body>
-    <form th:action="@{/authenticate}" method="POST">
-        <input name="username" type="email">
-        <input name="password" type="password">
-        <button type="submit">Send</button>
-    </form>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+        <title>Title</title>
+    </head>
+    <body>
+      <div class="elements-container">
+          <div class="menu-wrapper">
+              <ul class="menu">
+                  <li> pierwsza opcja </li>
+                  <li> druga opcja </li>
+                  <li> trzecia opcja </li>
+              </ul>
+          </div>
+          <div class="two-unit-container">
+              <div class="unit">
+                  <form th:action="@{/authenticate}" method="POST">
+                     <ul class="left-unit-content">
+                         <li>
+                             <span class="input-reference">Login: </span>
+                             <input type="text" name="username" class="input-text" placeholder="login">
+                             <br><span class="input-warning"><!--warning--></span>
+                         </li>
+                         <li>
+                             <span class="input-reference">Password: </span>
+                             <input type="password" name="password" class="input-password" placeholder="••••••••">
+                             <br><span class="input-warning"><!--warning--></span>
+                         </li>
+                         <li>
+                             <input type="submit" id="submit" class="submit-button" value="login">
+                         </li>
+                     </ul>
+                  </form>
+              </div>
+              <div class="separate-unit"></div>
+              <div class="unit">
+                  <ul class="right-unit-content">
+                      <li> info </li>
+                      <li> info </li>
+                      <li> info </li>
+                      <li> info </li>
+                      <li> info </li>
+                      <li> info </li>
+                      <li> info </li>
+                      <li> info </li>
+                      <li> info </li>
+                      <li> info </li>
+                  </ul>
+              </div>
+          </div>
+       </div>
+    </body>
 </html>
+
