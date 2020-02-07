@@ -1,4 +1,4 @@
-package io.games.simple.main;
+package io.games.simple.webapp.controller;
 
 
 import org.springframework.stereotype.Controller;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 public class RegisterController {
 
     @GetMapping("/register")
-    public String register(){
+    public String renderRegister(){
         return "register";
     }
 }

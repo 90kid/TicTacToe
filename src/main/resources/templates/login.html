@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en" >
+<<<<<<< HEAD
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="UTF-8">
-        <title>Tic Tac Toe</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+        <title>Title</title>
     </head>
     <body>
       <div class="container">
@@ -16,16 +19,16 @@
           </div>
           <div class="two-unit-container">
               <div class="unit">
-                  <form>
+                  <form th:action="@{/authenticate}" method="POST">
                      <ul class="left-unit-content">
                          <li>
                              <span class="input-reference">Login: </span>
-                             <input type="text" id="login" class="input-text" placeholder="login">
+                             <input type="text" name="username" class="input-text" placeholder="login">
                              <br><span class="input-warning"><!--warning--></span>
                          </li>
                          <li>
                              <span class="input-reference">Password: </span>
-                             <input type="password" id="password1" class="input-password" placeholder="••••••••">
+                             <input type="password" name="password" class="input-password" placeholder="••••••••">
                              <br><span class="input-warning"><!--warning--></span>
                          </li>
                          <li>
@@ -53,3 +56,4 @@
        </div>
     </body>
 </html>
+
