@@ -1,6 +1,5 @@
-@import '../bootstrap/bootstrap';
 body{
-  background-image: url("img/email-pattern.png");
+  background-image: url("/img/email-pattern.png");
   width: 1000px;
   height: 700px;
 }
@@ -144,7 +143,4 @@ body{
 .submit:hover{
   background-color: #a2ddda;
 }
-/*try to stay with this order:
-    height/width - float - background - font/text - border/padding/margin/shadow - color - special
-*/
-/* palette:  https://colorhunt.co/palette/169452  */
+
