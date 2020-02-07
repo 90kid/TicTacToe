@@ -6,14 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-public class StartController {
+public class RegisterController {
 
-    @GetMapping("/login")
-    public String login(Model model){
-        return "login";
-    }
-    @GetMapping("/")
-    public String register(Model model){
+    @GetMapping("/register")
+    public String register(){
         return "register";
     }
 }
