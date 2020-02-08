@@ -1,0 +1,15 @@
+html, body {
+  height: 100%;
+}
+
+#tictactoe {
+  margin-top: 5rem;
+}
+#tictactoe .col {
+  height: 10rem;
+  width: 7rem;
+  font-size: 5rem;
+}
+#tictactoe .btn{
+  border-color: aliceblue;
+}
