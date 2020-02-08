@@ -16,21 +16,21 @@
         </div>
         <div class="two-unit-container">
             <div class="unit">
-                <form th:action="@{/ACTION}" method="POST">
+                <form th:action="@{/register}" th:object="${user}" method="POST">
                     <ul class="left-unit-content">
                         <li>
                             <span class="input-reference">Login: </span>
-                            <input type="text" name="username" class="input-text" placeholder="login">
+                            <input type="text" name="username" class="input-text" placeholder="login" th:field="*{login}">
                             <br><span class="input-warning"><!--warning--></span>
                         </li>
                         <li>
                             <span class="input-reference">Email: </span>
-                            <input type="text" name="email" class="input-text" placeholder="email@email.com">
+                            <input type="text" name="email" th:field="*{email}" class="input-text" placeholder="email@email.com">
                             <br><span class="input-warning"><!--warning--></span>
                         </li>
                         <li>
                             <span class="input-reference">Password: </span>
-                            <input type="password" name="password1" class="input-password" placeholder="••••••••">
+                            <input type="password" name="password1" th:field="*{password}" class="input-password" placeholder="••••••••">
                             <br><span class="input-warning"><!--warning--></span>
                         </li>
                         <li>
