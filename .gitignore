@@ -35,5 +35,5 @@ target
 *.iml
 mvnw
 mvnw.cmd
-### CSS ###
-.css
+
+style.css
