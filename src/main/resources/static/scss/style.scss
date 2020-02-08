@@ -1,5 +1,16 @@
+/* This file only purpose is to overwrite bootstrap default themes */
+
+//based on adam's palette https://colorhunt.co/palette/169452
+$theme-colors: (
+        "primary": #706c61,
+        "light": #e1f4f3,
+        "dark": #333333
+);
+
+$enable-rounded: false;
+
 /* REFACTOR This imports the entire bootstrap and that's A LOT of data
    so after we do all the important stuff we have to make sure that we import only the important parts
    so that the page is smaller */
-@import '../bootstrap/bootstrap';
-@import 'adamStyle';
+   @import '../bootstrap/bootstrap';
+   
