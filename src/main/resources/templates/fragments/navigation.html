@@ -2,12 +2,29 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en" >
 <head>
     <meta charset="UTF-8">
-    <title>Tic Tac Toe</title>
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
     <link href="../static/css/login_register.css" th:href="@{/css/login_register.css}" rel="stylesheet" />
 </head>
 <body>
-<div th:replace="fragments/navigation :: navigation">...</div>
+<nav class="navbar navbar-expand-sm navbar-dark btn-primary" th:fragment="navigation">
+    <a class="navbar-brand" href="#">Simple games</a>
+    <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 <div class="text-center jumbotron">
     <form class="form-register">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>

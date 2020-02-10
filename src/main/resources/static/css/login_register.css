@@ -7,6 +7,9 @@ body {
   display: unset;
   color: var(--primary);
 }
+.color-red{
+  color: red;
+}
 .btn-block{
   width: 35%;
   display: unset;
@@ -17,6 +20,9 @@ body {
 }
 .btn-primary {
   background-color: var(--dark);
+}
+.btn-primary:hover {
+    background-color: var(--primary);
 }
 
 /*try to stay with this order:
