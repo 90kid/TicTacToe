@@ -1,12 +1,5 @@
-<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en" >
-<head>
-    <meta charset="UTF-8">
-    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
-    <link href="../static/css/login_register.css" th:href="@{/css/login_register.css}" rel="stylesheet" />
-</head>
-<body>
-<nav class="navbar navbar-expand-sm navbar-dark btn-primary" th:fragment="navigation">
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary" th:fragment="navigation">
     <a class="navbar-brand" href="#">Simple games</a>
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
@@ -25,21 +18,3 @@
         </ul>
     </div>
 </nav>
-<div class="text-center jumbotron">
-    <form class="form-register">
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <input type="text" id="inputUserName" class="form-control" placeholder="Username" required="" autofocus="">
-        <input type="password" id="inputPassword1" class="form-control" placeholder="Password" required="">
-        <div class="container text-center">
-            <a href="/register" class="btn color-red" role="button">Dont have an account yet?</a>
-        </div>
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
-</div>
-</body>
-</html>
