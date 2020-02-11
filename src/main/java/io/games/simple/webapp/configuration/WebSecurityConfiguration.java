@@ -21,7 +21,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception{
         http.authorizeRequests()
-                .antMatchers("/h2-console/**", "/save", "/register", "/tictactoe").permitAll()
+                .antMatchers("/h2-console/**", "/save", "/register").permitAll()
                 .anyRequest().authenticated()
 
                 .and()
@@ -34,7 +34,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/login?logout")
                 .permitAll()
 
                 //Code below is for h2-console to work without login
