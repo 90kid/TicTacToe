@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en" >
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Tic Tac Toe</title>
@@ -9,10 +9,10 @@
 <body>
 <div th:replace="fragments/navigation :: navigation">...</div>
 <div class="text-center jumbotron">
-    <form class="form-register">
+    <form form th:action="@{/authenticate}" method="POST" class="form-register">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <input type="text" id="inputUserName" class="form-control" placeholder="Username" required="" autofocus="">
-        <input type="password" id="inputPassword1" class="form-control" placeholder="Password" required="">
+        <input type="text" name="username" id="inputUserName" class="form-control" placeholder="Username" required="" autofocus="">
+        <input type="password" name="password" id="inputPassword1" class="form-control" placeholder="Password" required="">
         <div class="container text-center">
             <a href="/register" class="btn color-red" role="button">Dont have an account yet?</a>
         </div>

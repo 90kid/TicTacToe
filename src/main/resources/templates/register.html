@@ -9,19 +9,14 @@
 <body>
     <div th:replace="fragments/navigation :: navigation">...</div>
     <div class="text-center jumbotron">
-        <form class="form-register">
+        <form action="/register" class="form-register" th:object="${user}" method="POST">
             <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-            <input type="text" id="inputUserName" class="form-control" placeholder="Username" required="" autofocus="">
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
-            <input type="password" id="inputPassword1" class="form-control" placeholder="Password" required="">
+            <input type="text" th:field="*{login}" id="inputUserName" class="form-control" placeholder="Username" required="" autofocus="">
+            <input type="email" th:field="*{email}" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
+            <input type="password" th:field="*{password}" id="inputPassword1" class="form-control" placeholder="Password" required="">
             <input type="password" id="inputPassword2" class="form-control" placeholder="Repeat password" required="">
             <div class="container text-center">
                 <a href="/login" class="btn color-red" role="button">Already have an account?</a>
-            </div>
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
         </form>

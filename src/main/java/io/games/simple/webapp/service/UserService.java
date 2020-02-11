@@ -20,9 +20,9 @@ public class UserService implements UserDetailsService, CommonService<UserEntity
     }
 
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        return userRepository.findByEmail(email).orElseThrow(
-                ()->new UsernameNotFoundException("User of " + email + "doesn't exist")
+    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
+        return userRepository.findByLogin(login).orElseThrow(
+                ()->new UsernameNotFoundException("User of " + login + "doesn't exist")
         );
     }
 

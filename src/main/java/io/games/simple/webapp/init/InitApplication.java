@@ -15,8 +15,9 @@ public class InitApplication implements ApplicationRunner {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Autowired UserService userService;
-    @Autowired PasswordEncoder passwordEncoder;
+    @Autowired private UserService userService;
+    @Autowired private PasswordEncoder passwordEncoder;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
         logger.info("Init app");
@@ -34,10 +35,10 @@ public class InitApplication implements ApplicationRunner {
     }
 
     private void addUsers() {
-        userService.save(UserEntity.builder()
+        userService.save(UserEntity.builder().login("admin")
                 .email("admin@poczta.pl").password(passwordEncoder.encode("admin"))
                 .build());
-        userService.save(UserEntity.builder()
+        userService.save(UserEntity.builder().login("tomek")
                 .email("tomek@poczta.pl").password(passwordEncoder.encode("tomek"))
                 .build());
     }
