@@ -1,58 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
-        <title>Title</title>
-    </head>
-    <body>
-      <div class="elements-container">
-          <div class="menu-wrapper">
-              <ul class="menu">
-                  <li> pierwsza opcja </li>
-                  <li> druga opcja </li>
-                  <li> trzecia opcja </li>
-              </ul>
-          </div>
-          <div class="two-unit-container">
-              <div class="unit">
-                  <form th:action="@{/authenticate}" method="POST">
-                     <ul class="left-unit-content">
-                         <li>
-                             <span class="input-reference">Login: </span>
-                             <input type="text" name="username" class="input-text" placeholder="login">
-                             <br><span class="input-warning"><!--warning--></span>
-                         </li>
-                         <li>
-                             <span class="input-reference">Password: </span>
-                             <input type="password" name="password" class="input-password" placeholder="••••••••">
-                             <br><span class="input-warning"><!--warning--></span>
-                         </li>
-                         <li>
-                             <input type="submit" id="submit" class="submit-button" value="login">
-                         </li>
-                     </ul>
-                  </form>
-              </div>
-              <div class="separate-unit"></div>
-              <div class="unit">
-                  <ul class="right-unit-content">
-                      <li> info </li>
-                      <li> info </li>
-                      <li> info </li>
-                      <li> info </li>
-                      <li> info </li>
-                      <li> info </li>
-                      <li> info </li>
-                      <li> info </li>
-                      <li> info </li>
-                      <li> info </li>
-                  </ul>
-              </div>
-          </div>
-       </div>
-    </body>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <link href="../static/css/login_register.css" th:href="@{/css/login_register.css}" rel="stylesheet" />
+</head>
+<body>
+<div th:replace="fragments/navigation :: navigation">...</div>
+<div class="text-center jumbotron">
+    <form form th:action="@{/authenticate}" method="POST" class="form-register">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <input type="text" name="username" id="inputUserName" class="form-control" placeholder="Username" required="" autofocus="">
+        <input type="password" name="password" id="inputPassword1" class="form-control" placeholder="Password" required="">
+        <div class="container text-center">
+            <a href="/register" class="btn color-red" role="button">Dont have an account yet?</a>
+        </div>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+</div>
+</body>
 </html>
-

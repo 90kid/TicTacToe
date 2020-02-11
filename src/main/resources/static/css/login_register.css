@@ -1,0 +1,33 @@
+body {
+  background-image: url("/img/email-pattern.png");
+}
+
+.form-control{
+  width: 50%;
+  display: unset;
+  color: var(--primary);
+}
+.color-red{
+  color: red;
+}
+.btn-block{
+  width: 35%;
+  display: unset;
+
+}
+.jumbotron {
+  background-color: unset;
+}
+.btn-primary {
+  background-color: var(--dark);
+}
+.btn-primary:hover {
+    background-color: var(--primary);
+}
+
+/*try to stay with this order:
+    height/width - float - background - font/text - border/padding/margin/shadow - color - special
+*/
+/* palette:  https://colorhunt.co/palette/169452  */
+
+/*# sourceMappingURL=login_register.css.map */

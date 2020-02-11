@@ -4,62 +4,22 @@
     <meta charset="UTF-8">
     <title>Tic Tac Toe</title>
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <link href="../static/css/login_register.css" th:href="@{/css/login_register.css}" rel="stylesheet" />
 </head>
 <body>
-    <div class="elements-container">
-        <div class="menu-wrapper">
-            <ul class="menu">
-                <li> pierwsza opcja </li>
-                <li> druga opcja </li>
-                <li> trzecia opcja </li>
-            </ul>
-        </div>
-        <div class="two-unit-container">
-            <div class="unit">
-                <form th:action="@{/register}" th:object="${user}" method="POST">
-                    <ul class="left-unit-content">
-                        <li>
-                            <span class="input-reference">Login: </span>
-                            <input type="text" name="username" class="input-text" placeholder="login" th:field="*{login}">
-                            <br><span class="input-warning"><!--warning--></span>
-                        </li>
-                        <li>
-                            <span class="input-reference">Email: </span>
-                            <input type="text" name="email" th:field="*{email}" class="input-text" placeholder="email@email.com">
-                            <br><span class="input-warning"><!--warning--></span>
-                        </li>
-                        <li>
-                            <span class="input-reference">Password: </span>
-                            <input type="password" name="password1" th:field="*{password}" class="input-password" placeholder="••••••••">
-                            <br><span class="input-warning"><!--warning--></span>
-                        </li>
-                        <li>
-                            <span class="input-reference">Repeat Password: </span>
-                            <input type="password" name="password2" class="input-password" placeholder="••••••••">
-                            <br><span class="input-warning"><!--warning--></span>
-                        </li>
-                        <li>
-                            <input type="submit" id="submit" class="submit-button" value="register">
-                        </li>
-                    </ul>
-                </form>
+    <div th:replace="fragments/navigation :: navigation">...</div>
+    <div class="text-center jumbotron">
+        <form action="/register" class="form-register" th:object="${user}" method="POST">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+            <input type="text" th:field="*{login}" id="inputUserName" class="form-control" placeholder="Username" required="" autofocus="">
+            <input type="email" th:field="*{email}" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
+            <input type="password" th:field="*{password}" id="inputPassword1" class="form-control" placeholder="Password" required="">
+            <input type="password" id="inputPassword2" class="form-control" placeholder="Repeat password" required="">
+            <div class="container text-center">
+                <a href="/login" class="btn color-red" role="button">Already have an account?</a>
             </div>
-            <div class="separate-unit"></div>
-            <div class="unit">
-                <ul class="right-unit-content">
-                    <li> info </li>
-                    <li> info </li>
-                    <li> info </li>
-                    <li> info </li>
-                    <li> info </li>
-                    <li> info </li>
-                    <li> info </li>
-                    <li> info </li>
-                    <li> info </li>
-                    <li> info </li>
-                </ul>
-            </div>
-        </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        </form>
     </div>
 </body>
 </html>
