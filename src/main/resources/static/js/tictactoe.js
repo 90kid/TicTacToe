@@ -1,5 +1,3 @@
-const buttons = document.getElementsByClassName("btn");
-
 const init = () => {
     player1 = "X"
     player2 = "O"
@@ -12,15 +10,17 @@ const init = () => {
     for(let i = 0; i<9 ; i++){
         buttons[i].textContent = " "
     }
+    retry.style.visibility = "hidden"
 }
 
+/* init start */ 
+const buttons = document.getElementsByClassName("btn");
+const retry = document.getElementById("retry");
 let player1
 let player2
 let turn
 let board
 init()
-
-
 for(let i = 0; i<9 ; i++){
     buttons[i].addEventListener("click", () => {
         if(turn===1 && board[i]===' '){
@@ -28,19 +28,25 @@ for(let i = 0; i<9 ; i++){
             board[i] = player1
             turn = 2
             if(checkIfWin(player1)===true){
-                init()
-            }
+                retry.style.visibility = "visible"
+                congratulations(player1)
+            }   
         }
         else if(turn===2 && board[i]===' '){
             buttons[i].textContent = player2
             board[i] = player2
             turn = 1
             if(checkIfWin(player2)===true){
-                init()
+                retry.style.visibility = "visible"
+                congratulations(player2)
             }
         }
     })
 }
+retry.addEventListener("click", () => {
+    init()
+})
+/* init end */
 
 let checkIfWin = (player) => {
     if(checkIfWinDiagonal(player)===true)
@@ -68,4 +74,11 @@ let checkIfWinStraight = (player) => {
             return true
     }
     return false
+}
+
+let congratulations = (player) => {
+    for(let i = 0; i<9 ; i++){
+        buttons[i].textContent = player
+    }
+
 }
