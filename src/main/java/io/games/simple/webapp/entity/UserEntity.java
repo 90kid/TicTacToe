@@ -41,6 +41,12 @@ public class UserEntity implements UserDetails {
     @Builder.Default
     private boolean enabled = true;
 
+    private int winNumber;
+
+    private int loseNumber;
+
+    private int numberOfPlayedGame;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() { return null; }
 
@@ -54,4 +60,9 @@ public class UserEntity implements UserDetails {
     public boolean isCredentialsNonExpired() { return true; }
 
     public String getUsername() { return login; }
+
+    public float getWinLoseRatio(){
+        if(numberOfPlayedGame == 0) return 0;
+        return (winNumber - loseNumber)/(numberOfPlayedGame);
+    }
 }
