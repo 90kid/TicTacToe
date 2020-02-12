@@ -7,10 +7,7 @@ const init = () => {
         ' ', ' ', ' ',
         ' ', ' ', ' '
     ]
-    // board = [
-    //     'X', 'X', 'X',
-    //     'X', 'X', 'X',
-    //     'X', 'X', 'X']
+
     for(let i = 0; i<9 ; i++){
         buttons[i].textContent = " "
     }
