@@ -13,3 +13,6 @@ html, body {
 #tictactoe .btn{
   border-color: aliceblue;
 }
+#tictactoe .btn:activate{
+  border: none;
+}

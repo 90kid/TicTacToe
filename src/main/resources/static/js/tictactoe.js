@@ -7,6 +7,10 @@ const init = () => {
         ' ', ' ', ' ',
         ' ', ' ', ' '
     ]
+    // board = [
+    //     'X', 'X', 'X',
+    //     'X', 'X', 'X',
+    //     'X', 'X', 'X']
     for(let i = 0; i<9 ; i++){
         buttons[i].textContent = " "
     }
@@ -21,37 +25,48 @@ let player2
 let turn
 let board
 init()
+
+
 for(let i = 0; i<9 ; i++){
     buttons[i].addEventListener("click", () => {
         if(turn===1 && board[i]===' '){
             buttons[i].textContent = player1
             board[i] = player1
-            turn = 2
-            if(checkIfWin(player1)===true){
+            if(checkIfDraw())
+                retry.style.visibility = "visible"
+            if(checkIfWin(player1)){
                 retry.style.visibility = "visible"
                 congratulations(player1)
-            }   
+            }  
+            else 
+                turn = 2
         }
         else if(turn===2 && board[i]===' '){
             buttons[i].textContent = player2
             board[i] = player2
-            turn = 1
-            if(checkIfWin(player2)===true){
+            if(checkIfDraw())
+                retry.style.visibility = "visible"
+            if(checkIfWin(player2)){
                 retry.style.visibility = "visible"
                 congratulations(player2)
             }
+            else
+                turn = 1
         }
     })
 }
+
+
 retry.addEventListener("click", () => {
     init()
 })
 /* init end */
 
+
 let checkIfWin = (player) => {
-    if(checkIfWinDiagonal(player)===true)
+    if(checkIfWinDiagonal(player))
         return true
-    if(checkIfWinStraight(player)===true)
+    if(checkIfWinStraight(player))
         return true
     return false
 }
@@ -74,6 +89,14 @@ let checkIfWinStraight = (player) => {
             return true
     }
     return false
+}
+
+let checkIfDraw = () => {
+    for(let i = 0; i<9 ; i++){
+        if(board[i] === ' ')
+            return false
+    }
+    return true
 }
 
 let congratulations = (player) => {
