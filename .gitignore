@@ -36,7 +36,7 @@ target
 mvnw
 mvnw.cmd
 ### CSS ###
-*.css
-*.css.mapp
+style.css
+style.css.mapp
 
 /node_modules
