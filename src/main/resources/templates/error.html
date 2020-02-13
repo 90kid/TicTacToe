@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <th:block th:replace="script/script :: script"></th:block>
+</head>
+<body>
+<div th:replace="fragments/navigation :: navigation"></div>
+    <div class="container-fluid">
+        <div class="row al justify-content-center text-center">
+            <div class="col-12 mt-3 pb-2 header border-bottom border-dark">
+                <h1 class="display-2">Error</h1>
+            </div>
+            <div class="col-12 mt-5">
+                <p class="text-capitalize font-weight-bold display-3" th:text="${errorMessage}"></p>
+                <a href="/" class="btn btn-lg bg-light">Go home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
