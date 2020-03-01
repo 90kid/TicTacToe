@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaderboard</title>
+    <link href="../../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+    <th:block th:fragment="leaderboard">
+        <div class="modal fade" role="dialog" id="laderboard">
+            <div class="modal-dialog">
+                <div class="modal-content bg-white">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Leaderboard</h1>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered table-primary text-center" id="leaderboardTable">
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function getLeader() {
+                //TODO change url to variable
+                fetch("http://localhost:8000/leader").
+                then((response)=>{
+                    return response.json();
+                }).then((myJson)=>{
+                    console.log(myJson)
+                    let $leaderboardTable = document.getElementById("leaderboardTable");
+                    let position = 1;
+                    $leaderboardTable.innerHTML  = "" +
+                        "<thead className='thead-dark'>" +
+                            "<tr>" +
+                                "<th>Login</th>" +
+                                "<th>Win</th>" +
+                                "<th>Lose</th>" +
+                                "<th>Played game</th>" +
+                                "<th>Position</th>" +
+                        "</tr>";
+                    myJson.forEach(user => {$leaderboardTable.insertAdjacentHTML("beforeend", "" +
+                        "<tr>" +
+                            "<th>" + user.login + "</th>" +
+                            "<th>" + user.winNumber + "</th>" +
+                            "<th>" + user.loseNumber + "</th>" +
+                            "<th>" + user.gamePlayed + "</th>" +
+                            "<th>" + position++ + "</th>" +
+                        "</tr>");
+                        }
+                    );
+                })
+            }
+        </script>
+    </th:block>
+</body>
+</html>
